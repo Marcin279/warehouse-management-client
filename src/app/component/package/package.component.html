@@ -1,0 +1,24 @@
+<div class="m-5">
+  <div class="list-group w-auto" *ngFor="let package of packages">
+    <label class="list-group-item d-flex gap-3">
+      <input class="form-check-input flex-shrink-0" type="checkbox" value="" checked="" style="font-size: 1.375em;">
+      <span class="pt-1 form-checked-content">
+      <div>
+        <strong>Package ID: </strong>
+        {{package.id}}
+      </div>
+      <div>
+        Package type: {{package.packageType}}
+      </div>
+      <div>
+        Creation timestamp: {{package.admitionDate}}
+      </div>
+      <div>
+        Destination: {{package.destination}}
+      </div>
+    </span>
+    </label>
+  </div>
+</div>
+
+
