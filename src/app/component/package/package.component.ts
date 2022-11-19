@@ -22,7 +22,7 @@ export class PackageComponent implements OnInit {
       .subscribe(response => {
         this.packages = response;
     }, error => {
-        console.error("Error -> getPackages");  //TODO rename error message
+        console.error("Error loading package list!");
       });
   }
 }

@@ -1,0 +1,28 @@
+<div class="col-md-7 col-lg-8">
+  <h4 class="mb-3">New package</h4>
+  <form #data="ngForm" (ngSubmit)="createNewPackage(data.value)">
+    <div class="row g-3">
+      <div class="col-sm-6">
+        <label class="form-label" for="packageType">Package type</label>
+        <input class="form-control" id="packageType" type="text" name="packageType" ngModel>
+      </div>
+
+      <div class="col-sm-6">
+        <label class="form-label" for="qrCodeno">Qr link (TODO)</label>
+        <input class="form-control" id="qrCodeno" type="text" name="qrCodeno" ngModel>
+      </div>
+
+      <div class="col-sm-6">
+        <label class="form-label" for="admitionDate">Admition date</label>
+        <input class="form-control" id="admitionDate" type="text" name="admitionDate" ngModel>
+      </div>
+
+      <div class="col-sm-6">
+        <label class="form-label" for="destination">Destination</label>
+        <input class="form-control" id="destination" type="number" name="destination" ngModel>
+      </div>
+
+      <button class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
+    </div>
+  </form>
+</div>
