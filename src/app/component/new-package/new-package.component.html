@@ -1,67 +1,45 @@
 <div class="row p-0 m-0" style="height: calc(100vh - 70px)">
-  <div class="w-50 m-auto">
+  <div class="w-75 m-auto">
     <form #data="ngForm" (ngSubmit)="createNewPackage(data.value)">
       <h1 class="h3 mt-5 mb-3 fw-normal">Create new package</h1>
       <div class="form-floating mb-3">
-        <input class="form-control" id="packageType" placeholder="Package type" type="text" ngModel>
-        <label for="packageType">Package type</label>
+        <input class="form-control" id="package_type" name="package_type" placeholder="Package type" type="text" ngModel>
+        <label for="package_type">Package type</label>
       </div>
       <div class="form-floating mb-3">
-        <input class="form-control" id="destination" placeholder="Destination" type="number" ngModel>
-        <label class="form-label" for="destination">Destination</label>
+        <input class="form-control" id="package_name" name="package_name" placeholder="Package name" type="text" ngModel>
+        <label class="form-label" for="package_name">Package name</label>
       </div>
       <div class="form-floating mb-3">
-        <input class="form-control" id="approval_date" placeholder="Approval date" type="date" ngModel>
-        <label class="form-label" for="approval_date">Approval date</label>
+        <input class="form-control" id="sector" name="sector" placeholder="Sector" type="number" min="0" ngModel>
+        <label class="form-label" for="sector">Sector</label>
       </div>
 
-<!--      TODO list of available products - product id is required by API-->
-      <div class="form-floating mb-3">
-        <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Products
-        </button>
-        <ul class="dropdown-menu w-100">
-          <li class="dropdown-item list-group-item d-flex justify-content-between align-items-center">
-            <div class="row" style="width: 95%">
-              <div class="col col-3">blender</div>
-              <div class="col col-3"><b>Category:</b> AGD</div>
-              <div class="col col-3"><b>Product type:</b> package</div>
-            </div>
-            <span class="mw-5 badge badge-primary rounded-pill text-primary">21</span>
-          </li>
-          <li class="dropdown-item list-group-item d-flex justify-content-between align-items-center" style="background-color: #e6e6e6">
-            <div class="row" style="width: 95%">
-              <div class="col col-3">HDD external drive</div>
-              <div class="col col-3"><b>Category:</b> Computers</div>
-              <div class="col col-3"><b>Product type:</b> package</div>
-            </div>
-            <span class="mw-5 badge badge-primary rounded-pill text-primary">37</span>
-          </li>
-          <li class="dropdown-item list-group-item d-flex justify-content-between align-items-center">
-            <div class="row" style="width: 95%">
-              <div class="col col-3">Raspberry PI</div>
-              <div class="col col-3"><b>Category:</b> Computers</div>
-              <div class="col col-3"><b>Product type:</b> package</div>
-            </div>
-            <span class="mw-5 badge badge-primary rounded-pill text-primary">12</span>
-          </li>
-          <li class="dropdown-item list-group-item d-flex justify-content-between align-items-center" style="background-color: #e6e6e6">
-            <div class="row" style="width: 95%">
-              <div class="col col-3">washing machine</div>
-              <div class="col col-3"><b>Category:</b> AGD</div>
-              <div class="col col-3"><b>Product type:</b> package</div>
-            </div>
-            <span class="mw-5 badge badge-primary rounded-pill text-primary">99</span>
-          </li>
-          <li class="dropdown-item list-group-item d-flex justify-content-between align-items-center">
-            <div class="row" style="width: 95%">
-              <div class="col col-3">blender</div>
-              <div class="col col-3"><b>Category:</b> AGD</div>
-              <div class="col col-3"><b>Product type:</b> package</div>
-            </div>
-            <span class="mw-5 badge badge-primary rounded-pill text-primary">31</span>
-          </li>
-        </ul>
+      <label for="shipment_name">Shipment details</label>
+      <select class="form-select form-floating mb-3" required="true" id="shipment_name" name="shipment_name" ngModel>
+        <option value="{{sd.shipment_name}}" *ngFor="let sd of shipmentDetails">
+          {{sd.shipment_name}} - address: {{sd.buildings_number}} {{sd.street}} {{sd.city}}
+        </option>
+      </select>
+
+      <div class="form-floating mb-3 row">
+        <h1 class="h5 mb-3 fw-normal">Add product with quantity</h1>
+        <form class=row #newProductStore="ngForm" (ngSubmit)="addNewProductStore(newProductStore.value)">
+          <div class=" col form-floating mb-3 w-25">
+            <input type="number" min="0" class="form-control" id="quantity" name="quantity" ngModel>
+            <label for="quantity">Quantity</label>
+          </div>
+          <select class="col form-select form-floating mb-3 w-50" required="true" id="product_name" name="product_name" ngModel>
+            <option class="col justify-content-between" value="{{product.product_name}}" *ngFor="let product of products">
+              <div>{{product.product_name}}</div>
+              <div>{{product.product_type}}</div>
+              <div>{{product.category}}</div>
+            </option>
+          </select>
+          <div class="col w-25">
+            <button type="submit" value="submit" class="btn btn-primary mt-4">Add</button>
+          </div>
+        </form>
       </div>
       <button class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
     </form>

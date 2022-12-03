@@ -1,0 +1,55 @@
+<div class="row p-0 m-0" style="height: calc(100vh - 70px)">
+  <main class="form-signing w-75 m-auto">
+    <form #data="ngForm" (ngSubmit)="createNewShipmentDetails(data.value)">
+      <h1 class="h3 mt-5 mb-3 fw-normal">New shipment details</h1>
+      <div class="form-floating mb-3">
+        <input class="form-control" id="shipment_name" name="shipment_name" placeholder="Shipment name" type="text" ngModel>
+        <label for="shipment_name">Shipment name</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" id="total_weight" name="total_weight" placeholder="Total weight" type="number" min="0" ngModel>
+        <label for="total_weight">Total weight</label>
+      </div>
+      <div class="mb-3">
+        <div class="h5 mt-2 mb-1 fw-normal">Address details</div>
+        <div class="row mb-3">
+          <div class="col">
+            <div class="form-outline form-floating">
+              <input class="form-control" id="buildings_number" name="buildings_number" placeholder="Building number" type="number" min="0" ngModel>
+              <label for="buildings_number">Building number</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline form-floating">
+              <input class="form-control" id="street" name="street" placeholder="Street" type="text" ngModel>
+              <label for="street">Street</label>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <div class="form-outline form-floating">
+              <input class="form-control" id="city" name="city" placeholder="City" type="text" ngModel>
+              <label for="city">City</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline form-floating">
+              <input class="form-control" id="postal_code" name="postal_code" placeholder="Postal code" type="text" ngModel>
+              <label for="postal_code">Postal code</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <div class="form-outline form-floating">
+            <input class="form-control" id="country" name="country" placeholder="Country" type="text" ngModel>
+            <label for="country">Country</label>
+          </div>
+        </div>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign-up</button>
+    </form>
+  </main>
+</div>

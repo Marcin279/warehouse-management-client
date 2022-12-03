@@ -1,22 +1,22 @@
 <div class="row p-0 m-0" style="height: calc(100vh - 70px)">
   <main class="form w-50 m-auto">
-    <form>
+    <form #data="ngForm" (ngSubmit)="createNewProduct(data.value)">
       <h1 class="h3 mt-5 mb-3 fw-normal">Add new product</h1>
       <div class="form-floating mb-3">
-        <input class="form-control" id="product_name" placeholder="Product name" type="text">
+        <input class="form-control" id="product_name" name="product_name" placeholder="Product name" type="text" ngModel>
         <label for="product_name">Product name</label>
       </div>
-      <select class="form-floating mb-3 form-select" aria-label=".form-select-lg example">
-        <option>Product type</option>
-        <option value="1">Product1</option>
-        <option value="2">Product2</option>
-        <option value="3">Product3</option>
-        <option value="4">Product4</option>
-        <option value="5">Product5</option>
-        <option value="6">Product6</option>
+      <label for="product_type">Product type</label>
+      <select class="form-floating mb-3 form-select" required="true" aria-label=".form-select-lg example" id="product_type" name="product_type" ngModel>
+        <option value="Product1">Product1</option>
+        <option value="Product2">Product2</option>
+        <option value="Product3">Product3</option>
+        <option value="Product4">Product4</option>
+        <option value="Product5">Product5</option>
+        <option value="Product6">Product6</option>
       </select>
       <div class="form-floating mb-3">
-        <input class="form-control" id="category" placeholder="Category" type="text">
+        <input class="form-control" id="category" name="category" placeholder="Category" type="text" ngModel>
         <label for="category">Category</label>
       </div>
       <button class="w-100 btn btn-lg btn-primary" type="submit">Save</button>

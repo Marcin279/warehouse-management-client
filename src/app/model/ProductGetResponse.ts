@@ -1,5 +1,6 @@
-export interface Product {
+export interface ProductGetResponse {
   product_name: string
   product_type: string
+  QR_code: string
   category: string
 }

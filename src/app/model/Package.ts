@@ -1,7 +1,10 @@
+import {ProductStore} from "./ProductStore";
+
 export interface Package {
-  id: number
-  packageType: string
-  qrCodeno: string
-  admitionDate: string
-  destination: number
+  package_name: string
+  package_type: string
+  sector: number
+  status: string
+  product_store: ProductStore[]
+  shipment_name: string
 }
