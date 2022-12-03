@@ -1,28 +1,70 @@
-<div class="col-md-7 col-lg-8">
-  <h4 class="mb-3">New package</h4>
-  <form #data="ngForm" (ngSubmit)="createNewPackage(data.value)">
-    <div class="row g-3">
-      <div class="col-sm-6">
-        <label class="form-label" for="packageType">Package type</label>
-        <input class="form-control" id="packageType" type="text" name="packageType" ngModel>
+<div class="row p-0 m-0" style="height: calc(100vh - 70px)">
+  <div class="w-50 m-auto">
+    <form #data="ngForm" (ngSubmit)="createNewPackage(data.value)">
+      <h1 class="h3 mt-5 mb-3 fw-normal">Create new package</h1>
+      <div class="form-floating mb-3">
+        <input class="form-control" id="packageType" placeholder="Package type" type="text" ngModel>
+        <label for="packageType">Package type</label>
       </div>
-
-      <div class="col-sm-6">
-        <label class="form-label" for="qrCodeno">Qr link (TODO)</label>
-        <input class="form-control" id="qrCodeno" type="text" name="qrCodeno" ngModel>
-      </div>
-
-      <div class="col-sm-6">
-        <label class="form-label" for="admitionDate">Admition date</label>
-        <input class="form-control" id="admitionDate" type="text" name="admitionDate" ngModel>
-      </div>
-
-      <div class="col-sm-6">
+      <div class="form-floating mb-3">
+        <input class="form-control" id="destination" placeholder="Destination" type="number" ngModel>
         <label class="form-label" for="destination">Destination</label>
-        <input class="form-control" id="destination" type="number" name="destination" ngModel>
+      </div>
+      <div class="form-floating mb-3">
+        <input class="form-control" id="approval_date" placeholder="Approval date" type="date" ngModel>
+        <label class="form-label" for="approval_date">Approval date</label>
       </div>
 
+<!--      TODO list of available products - product id is required by API-->
+      <div class="form-floating mb-3">
+        <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Products
+        </button>
+        <ul class="dropdown-menu w-100">
+          <li class="dropdown-item list-group-item d-flex justify-content-between align-items-center">
+            <div class="row" style="width: 95%">
+              <div class="col col-3">blender</div>
+              <div class="col col-3"><b>Category:</b> AGD</div>
+              <div class="col col-3"><b>Product type:</b> package</div>
+            </div>
+            <span class="mw-5 badge badge-primary rounded-pill text-primary">21</span>
+          </li>
+          <li class="dropdown-item list-group-item d-flex justify-content-between align-items-center" style="background-color: #e6e6e6">
+            <div class="row" style="width: 95%">
+              <div class="col col-3">HDD external drive</div>
+              <div class="col col-3"><b>Category:</b> Computers</div>
+              <div class="col col-3"><b>Product type:</b> package</div>
+            </div>
+            <span class="mw-5 badge badge-primary rounded-pill text-primary">37</span>
+          </li>
+          <li class="dropdown-item list-group-item d-flex justify-content-between align-items-center">
+            <div class="row" style="width: 95%">
+              <div class="col col-3">Raspberry PI</div>
+              <div class="col col-3"><b>Category:</b> Computers</div>
+              <div class="col col-3"><b>Product type:</b> package</div>
+            </div>
+            <span class="mw-5 badge badge-primary rounded-pill text-primary">12</span>
+          </li>
+          <li class="dropdown-item list-group-item d-flex justify-content-between align-items-center" style="background-color: #e6e6e6">
+            <div class="row" style="width: 95%">
+              <div class="col col-3">washing machine</div>
+              <div class="col col-3"><b>Category:</b> AGD</div>
+              <div class="col col-3"><b>Product type:</b> package</div>
+            </div>
+            <span class="mw-5 badge badge-primary rounded-pill text-primary">99</span>
+          </li>
+          <li class="dropdown-item list-group-item d-flex justify-content-between align-items-center">
+            <div class="row" style="width: 95%">
+              <div class="col col-3">blender</div>
+              <div class="col col-3"><b>Category:</b> AGD</div>
+              <div class="col col-3"><b>Product type:</b> package</div>
+            </div>
+            <span class="mw-5 badge badge-primary rounded-pill text-primary">31</span>
+          </li>
+        </ul>
+      </div>
       <button class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>
+

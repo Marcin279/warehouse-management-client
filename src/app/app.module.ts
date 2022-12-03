@@ -11,6 +11,8 @@ import {FormsModule} from "@angular/forms";
 import { NewPackageComponent } from './component/new-package/new-package.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { LoginComponent } from './component/login/login.component';
+import { NewProductComponent } from './component/new-product/new-product.component';
+import { RegisterComponent } from './component/register/register.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { LoginComponent } from './component/login/login.component';
     HomeComponent,
     NewPackageComponent,
     MenuComponent,
-    LoginComponent
+    LoginComponent,
+    NewProductComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
