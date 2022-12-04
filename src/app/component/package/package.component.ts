@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Package} from "../../model/Package";
+import {PackageGetResponse} from "../../model/PackageGetResponse";
 
 @Component({
   selector: 'app-package',
@@ -8,7 +8,7 @@ import {Package} from "../../model/Package";
   styleUrls: ['./package.component.css']
 })
 export class PackageComponent implements OnInit {
-  packages!: Package[];
+  packages!: PackageGetResponse[];
 
   constructor(private httpClient: HttpClient) {
   }
@@ -18,9 +18,9 @@ export class PackageComponent implements OnInit {
   }
 
   public getPackages() {
-    this.httpClient.get<Package[]>("http://localhost:8080/package/")
+    this.httpClient.get<any>("http://localhost:8080/package/")
       .subscribe(response => {
-        this.packages = response;
+        this.packages = response.results;
     }, error => {
         console.error("Error loading package list!");
       });

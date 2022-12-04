@@ -1,5 +1,7 @@
+import {ProductGetResponse} from "./ProductGetResponse";
+
 export interface Product {
-  product_name: string
+  product_name: ProductGetResponse
   product_type: string
   category: string
 }
