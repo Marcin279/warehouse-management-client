@@ -10,5 +10,5 @@ export interface PackageGetResponse {
   sector: number
   status: string
   product_store: ProductStoreGetResponse[]
-  shipment_name: ShipmentDetailsGetResponse
+  shipment_details: ShipmentDetailsGetResponse
 }

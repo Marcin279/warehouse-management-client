@@ -18,11 +18,29 @@ export class PackageComponent implements OnInit {
   }
 
   public getPackages() {
-    this.httpClient.get<any>("http://localhost:8080/package/")
+    this.httpClient.get<any>("http://127.0.0.1:8080/package/product")
       .subscribe(response => {
         this.packages = response.results;
+        console.log(this.packages);
     }, error => {
         console.error("Error loading package list!");
       });
+  }
+
+  public setPackageStatus(status: string, packageId: number) {
+    alert("Package status (" + status + ") has been saved!")
+
+    // const postPackageStatus = {
+    //   id: packageId,
+    //   status: status
+    // };
+    //
+    // this.httpClient.patch<any>("TODO", postPackageStatus)
+    //   .subscribe(response => {
+    //     console.log(response);
+    //     this.getPackages();
+    //   }, error => {
+    //     console.error("TODO");
+    //   });
   }
 }
