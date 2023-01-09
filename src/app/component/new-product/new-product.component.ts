@@ -21,7 +21,8 @@ export class NewProductComponent {
     const newProduct = {
       product_name: formModel.product_name,
       product_type: formModel.product_type,
-      category: formModel.category
+      category: formModel.category,
+      total_quantity: formModel.total_quantity
     } as Product;
 
     this.httpClient.post<Product>("http://127.0.0.1:8080/product/", newProduct)

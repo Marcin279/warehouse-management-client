@@ -3,4 +3,5 @@ export interface ProductGetResponse {
   product_type: string
   QR_code: string
   category: string
+  total_quantity: number
 }
