@@ -25,8 +25,8 @@ export class ShipmentDetailsComponent {
       street: formModel.street,
       postal_code: formModel.postal_code,
       city: formModel.city,
-      country: formModel.country,
-      total_weight: formModel.total_weight
+      country: formModel.country
+      // total_weight: formModel.total_weight
     } as ShipmentDetails;
 
     this.httpClient.post<ShipmentDetails>("http://127.0.0.1:8080/shipment/", newShipmentDetails)
